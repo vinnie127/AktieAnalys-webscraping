@@ -15,7 +15,7 @@ namespace AktieDataMedWescraping
         public async Task StartCrawlerAsync()
         {
 
-            var url = "PLACE UR URL HERE";
+            var url = "PLACE YOUR URL HERE ";
 
             var httpClient = new HttpClient();
 
@@ -39,9 +39,7 @@ namespace AktieDataMedWescraping
                 var StockPercentChange = div.SelectSingleNode(".//div[@class='Flexbox__StyledFlexbox-sc-1ob4g1e-0 eDgWiq Cell__StyledFlexbox-sc-icfddc-0 dvPBCt']");
                 var StockLastPrice = div.SelectSingleNode(".//div[@class='Flexbox__StyledFlexbox-sc-1ob4g1e-0 dcnKuH Cell__StyledFlexbox-sc-icfddc-0 dvPBCt NumberCell__StyledFlexTableCell-sc-icuiuz-0 hlZdvv']");
                 var BuyPrice = div.SelectSingleNode(".//div[@class='Flexbox__StyledFlexbox-sc-1ob4g1e-0 imQKMv Cell__StyledFlexbox-sc-icfddc-0 dvPBCt NumberCell__StyledFlexTableCell-sc-icuiuz-0 hlZdvv']");
-                var SellPrice = div.SelectSingleNode(".//div[@class='Flexbox__StyledFlexbox-sc-1ob4g1e-0 imQKMv Cell__StyledFlexbox-sc-icfddc-0 dvPBCt NumberCell__StyledFlexTableCell-sc-icuiuz-0 hlZdvv']");
-
-
+                var SellPrice = BuyPrice.NextSibling;
 
 
                     var stock = new Stock()
